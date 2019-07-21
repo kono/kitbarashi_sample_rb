@@ -1,6 +1,6 @@
 require "test_helper"
 
-class KitbarashiSampleRbTest < Minitest::Test
+class KitbarashiSampleRbTest < Test::Unit::TestCase 
   def test_that_it_has_a_version_number
     refute_nil ::KitbarashiSampleRb::VERSION
   end
