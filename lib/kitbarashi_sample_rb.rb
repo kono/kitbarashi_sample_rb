@@ -6,9 +6,10 @@ module KitbarashiSampleRb
   
   class Kitbarashi
     def initialize
-      @kitmaster = Kitmaster.new
+      @kitprice = Kitmaster.kitprice
+      @kittable = Kitmaster.kittable
     end
-    
+
     def barashi(item, qty, price)
       h = Hash.new
       h[:item] = item
