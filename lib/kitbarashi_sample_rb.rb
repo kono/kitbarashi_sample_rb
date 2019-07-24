@@ -1,9 +1,14 @@
 require "kitbarashi_sample_rb/version"
+require "kitmaster"
 
 module KitbarashiSampleRb
   class Error < StandardError; end
   
   class Kitbarashi
+    def initialize
+      @kitmaster = Kitmaster.new
+    end
+    
     def barashi(item, qty, price)
       h = Hash.new
       h[:item] = item
