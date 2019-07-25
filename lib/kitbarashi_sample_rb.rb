@@ -12,7 +12,8 @@ module KitbarashiSampleRb
 
     def barashi(item, qty, price)
       result = []
-      unless @kitprice.index(item).nil?
+      kit=@kitprice.find{|kit| kit[:kitcode]==item}
+      unless kit.nil?
         barashi_sub(item, qty, price, result)
       else
         h = Hash.new
@@ -23,8 +24,5 @@ module KitbarashiSampleRb
       end
     end
 
-    def barashi_sub(item, qty, price, result)
-    end
-    
   end
 end
