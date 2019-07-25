@@ -11,11 +11,20 @@ module KitbarashiSampleRb
     end
 
     def barashi(item, qty, price)
-      h = Hash.new
-      h[:item] = item
-      h[:qty]  = qty
-      h[:price]= price
-      [h]
+      result = []
+      unless @kitprice.index(item).nil?
+        barashi_sub(item, qty, price, result)
+      else
+        h = Hash.new
+        h[:item] = item
+        h[:qty]  = qty
+        h[:price]= price
+        result.push h
+      end
     end
+
+    def barashi_sub(item, qty, price, result)
+    end
+    
   end
 end
