@@ -15,7 +15,11 @@ class KitbarashiSampleRbTest < Test::Unit::TestCase
       "kittable 2番目単価" => [[{:product=>10, :qty=>2, :price=>30}, 
                           {:product=>11, :qty=>4, :price=>20},
                           {:product=>12, :qty=>2, :price=>40}],
-                          2,2,110]
+                          2,2,110],
+      "kittable 該当単価なし" => [[{:product=>10, :qty=>1, :price=>13},
+                          {:product=>11, :qty=>2, :price=>7},
+                          {:product=>12, :qty=>1, :price=>13}],
+                        2, 1, 40]
   )
   test "kit" do |(expected, item,qty,price)|
     o = KitbarashiSampleRb::Kitbarashi.new
